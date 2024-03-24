@@ -4,7 +4,7 @@ const REMOTE_URL = 'http://localhost';
 const fetchAndRenderData = async(url, containerId, renderFn) => {
 	url = REMOTE_URL + url;
 	const response = await fetch(url);
-	const data = await response.json();
+	const {success, message, data} = await response.json();
 	console.log(data);
 	$(containerId).innerHTML = Array.isArray(data) ? data.map(renderFn).join('') : data.map(renderFn);
 };
