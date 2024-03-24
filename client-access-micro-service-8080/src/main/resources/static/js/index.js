@@ -1,4 +1,4 @@
-const REMOTE_URL = 'http://localhost';
+const REMOTE_URL = 'http://localhost'; // 遠端 API 伺服器的網址
 
 // 取得指定資源並渲染到指定容器中
 const fetchAndRenderData = async(url, containerId, renderFn) => {
