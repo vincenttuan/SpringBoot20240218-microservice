@@ -2,6 +2,8 @@ package message_queue_demo.mq.coffee;
 
 import java.util.Random;
 
+import message_queue_demo.mq.MessageQueue;
+
 public class Main {
 	
 	public static void main(String[] args) throws InterruptedException {

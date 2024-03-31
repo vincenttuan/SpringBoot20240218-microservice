@@ -1,5 +1,7 @@
 package message_queue_demo.mq.coffee;
 
+import message_queue_demo.mq.MessageQueue;
+
 public class Consumer implements Runnable {
 	private final MessageQueue queue;
 	

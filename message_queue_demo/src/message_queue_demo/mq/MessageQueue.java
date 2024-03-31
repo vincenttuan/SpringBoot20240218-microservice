@@ -1,4 +1,4 @@
-package message_queue_demo.mq.coffee;
+package message_queue_demo.mq;
 
 import java.util.LinkedList;
 import java.util.Queue;
