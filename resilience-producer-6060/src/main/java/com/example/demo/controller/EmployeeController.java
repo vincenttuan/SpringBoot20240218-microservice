@@ -33,6 +33,7 @@ public class EmployeeController {
 	// 這是一個回退方法(Fallback)，當 getEmployee 方法發生異常時，將調用此方法
 	public Employee getEmployeeFallback(Integer empId, Throwable t) {
 		if (empId == 0) {
+			// 這裡故意拋出異常，模擬異常情況, GlobalExceptiionHandler 會處理這個異常
 			throw new RuntimeException("Fallback: Employee not found");
 		}
 		Employee emp = new Employee();
