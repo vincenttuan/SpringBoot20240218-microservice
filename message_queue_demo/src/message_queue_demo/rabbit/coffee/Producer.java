@@ -3,6 +3,7 @@ package message_queue_demo.rabbit.coffee;
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.ConnectionFactory;
+import com.rabbitmq.client.DeliverCallback;
 
 public class Producer {
 	
@@ -28,6 +29,14 @@ public class Producer {
 	         * */
 			channel.queueDeclare(QUEUE_NAME, false, false, false, null);
 			
+			System.out.println("[*] Waiting for message. To exit press CTRL+C");
+			
+			DeliverCallback deliverCallback = (customerTag, delivery) -> { // 消息交付後的回調函數
+				String message = new String(delivery.getBody(), "UTF-8");
+				// 表示消費者已經收到消息
+				System.out.printf("[x] 消費者已經接收到消息 received: '%s'%n", message);
+			};
+			channel.basicConsume(QUEUE_NAME, true, deliverCallback, cancelCallback->{});
 		}
 	}
 	
