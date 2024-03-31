@@ -5,7 +5,7 @@ public class Producer implements Runnable {
 	private final MessageQueue queue;
 	
 	// 咖啡庫存
-	private int coffeeStock = 0;
+	private int coffeeStock = 10;
 	
 	public Producer(MessageQueue queue) {
 		this.queue = queue;
