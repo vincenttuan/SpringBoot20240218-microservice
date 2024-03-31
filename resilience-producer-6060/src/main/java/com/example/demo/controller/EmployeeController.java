@@ -1,4 +1,5 @@
 package com.example.demo.controller;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -31,6 +32,9 @@ public class EmployeeController {
 	
 	// 這是一個回退方法(Fallback)，當 getEmployee 方法發生異常時，將調用此方法
 	public Employee getEmployeeFallback(Integer empId, Throwable t) {
+		if (empId == 0) {
+			throw new RuntimeException("Fallback: Employee not found");
+		}
 		Employee emp = new Employee();
 		emp.setEmpId(empId);
 		emp.setEmpName("Fallback Employee");
