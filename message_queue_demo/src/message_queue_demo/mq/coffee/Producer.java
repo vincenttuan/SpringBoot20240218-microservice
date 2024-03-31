@@ -5,10 +5,11 @@ public class Producer implements Runnable {
 	private final MessageQueue queue;
 	
 	// 咖啡庫存
-	private int coffeeStock = 10;
+	private int coffeeStock;
 	
-	public Producer(MessageQueue queue) {
+	public Producer(MessageQueue queue, int coffeeStock) {
 		this.queue = queue;
+		this.coffeeStock = coffeeStock;
 	}
 	
 	@Override

@@ -13,7 +13,7 @@ public class Main {
 		
 		
 		// 啟動生產者執行緒
-		Producer producer = new Producer(queue);
+		Producer producer = new Producer(queue, 10);
 		// 當咖啡庫存大於 0 時, 持續購買咖啡
 		while (true) {
 			// 模擬購買咖啡的動作
