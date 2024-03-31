@@ -17,7 +17,7 @@ public class EmployeeController {
 	@GetMapping("/{empId}")
 	public Employee getEmployee(@PathVariable Integer empId) {
         
-		if (empId == 0) {
+		if (empId == 0 || empId == -1) {
 			// 這裡故意拋出異常，模擬異常情況, 這樣 CircuitBreaker 就會觸發
 			throw new RuntimeException("Employee not found");
 		}
@@ -32,7 +32,7 @@ public class EmployeeController {
 	
 	// 這是一個回退方法(Fallback)，當 getEmployee 方法發生異常時，將調用此方法
 	public Employee getEmployeeFallback(Integer empId, Throwable t) {
-		if (empId == 0) {
+		if (empId == -1) {
 			// 這裡故意拋出異常，模擬異常情況, GlobalExceptiionHandler 會處理這個異常
 			throw new RuntimeException("Fallback: Employee not found");
 		}
