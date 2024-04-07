@@ -36,8 +36,7 @@ public class PriceEmitterService {
 	
 	// 取得 price.json 並轉 String[]
 	private String[] getJsonArray() throws IOException {
-		String jsonFilePath = null;
-		jsonFilePath = "C:/Users/vince/Downloads/price.json";
+		String jsonFilePath = "C:/Users/vince/Downloads/price.json";
     	String jsonStr = Files.readString(Paths.get(jsonFilePath));
         String[] jsonStrs = jsonStr.split("\n");
         return jsonStrs;
