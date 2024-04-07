@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+    <title>Spring Boot Tutorial - WebSocket</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@stomp/stompjs@7.0.0/bundles/stomp.umd.min.js"></script>
+	<script src="./js/app.js"></script>
+	<link rel="stylesheet" href="./css/app.css" />
+</head>
+<body style="padding: 20px;">
+
+	<h1>Spring Boot WebSocket + RabbitMQ.</h1>
+	<form id="myForm" class="pure-form">
+		<fieldset>
+            <legend>訂閱股票</legend>
+            <input type="text" id="symbolInput" placeholder="輸入股票代號" />
+            <button id="subscribeBtn" type="button" class="pure-button pure-button-primary">發送</button>
+        </fieldset>    
+	</form>
+	<div id="receiveMessage"></div>
+	<table class="pure-table pure-table-bordered">
+		<thead>
+			<tr>
+				<th>股票代號</th>
+				<th>最新價</th>
+				<th>最新成交量</th>
+				<th>最佳買價</th>
+				<th>最佳買量</th>
+				<th>最佳賣價</th>
+				<th>最佳賣量</th>
+				<th>成交時間</th>
+			</tr>
+		</thead>
+		<tbody id="receiveBody">
+			
+		</tbody>
+	</table>
+
+</body>
+</html>
