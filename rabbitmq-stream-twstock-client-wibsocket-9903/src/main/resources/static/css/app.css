@@ -1,0 +1,9 @@
+@keyframes flashBackground {
+    0% { background-color: transparent; }
+    50% { background-color: lightblue; }
+    100% { background-color: transparent; }
+}
+
+.flash {
+    animation: flashBackground 0.1s; /* 閃爍時間 */
+}
