@@ -127,8 +127,8 @@ document.addEventListener("DOMContentLoaded", function() {
 	});
 	
 	// 預設訂閱 2330, 2303, 3008, 2317, 0050, 1101, 1402, 00632R
-	//const defaultSymbols = ['2330', '2303', '3008', '2317', '0050', '1101', '1402', '00632R', '2884', '2891', '3231'];
-	const defaultSymbols = ['2330', '2303'];
+	const defaultSymbols = ['2330', '2303', '3008', '2317', '0050', '1101', '1402', '00632R', '2884', '2891', '3231'];
+	//const defaultSymbols = ['2330', '2303'];
 	defaultSymbols.forEach((symbol) => {
 		//  避免訂閱太快，導致後端還沒訂閱完成
 		setTimeout(() => {
